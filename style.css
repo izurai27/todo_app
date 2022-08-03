@@ -7,6 +7,19 @@ body,main,p,h1,input, div, ul, img{
 body{
   background-color:#161622;
   color:white;
+  /* background-image: url('./images/bg-mobile-dark.jpg');
+  background-size: 50%;
+  background-repeat: no-repeat; */
+}
+
+.bg{
+  width:100%;
+  height:calc(200/16*1rem);
+  background-image: url('./images/bg-mobile-dark.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position:absolute;
+  z-index:-30;
 }
 
 main{
@@ -20,10 +33,10 @@ main{
 .title{
   color:white;
   height:calc(200/16*1rem);
-  background-image: url('./images/bg-mobile-dark.jpg');
+  /* background-image: url('./images/bg-mobile-dark.jpg'); */
   padding-top:3rem;
   background-size: cover;
-  padding-inline: calc(24/16*1rem);
+  padding-inline: calc(36/16*1rem);
   display: flex;
   justify-content: space-between;
   width:100%;
@@ -39,7 +52,7 @@ form{
   /* height: fit-content; */
   /* position: absolute;
   top:calc(108/16*1rem); */
-  width: calc(328/375*100vw);
+  width: calc(328/375*100%);
   transform:translateY(calc(-85/16*1rem));
 }
 
@@ -56,7 +69,7 @@ input{
 }
 
 ul{
-  width: calc(328/375*100vw);
+  width: calc(328/375*100%);
   background-color: #25273C;
    border-radius: 4px;
    /* position: absolute;
@@ -107,24 +120,72 @@ li:last-child{
   display:block;
 }
 
-.stroke{
-  text-decoration: line-through;
-}
 
 .list_item{
   color:white;
   width:80%;
 }
 
+.stroke{
+  text-decoration: line-through;
+  color:grey;
+}
 .delete{
   width:9px;
   height: auto;
 }
 
-.action{
-  margin-top:100px;
+.bottom{
+  color:#5F607C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form.action{
+  height: 100%;
+  display:inline;
+  transform:translateY(0);
+  width:fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:0;
+}
+
+.actionbtn{
+  display:inline;
+  border:none;
+  width:fit-content;
+  background-color: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  color:#5F607C;
+}
+
+.filter{
+  color:#5179D4;
 }
 
 .submit{
   display:none;
+}
+
+.js{
+  height:100px;
+  position: absolute;
+}
+
+@media only screen and (min-width:1000px){
+
+  main{
+    width:calc(547/1440*100vw);
+    min-width: 547px;
+    margin:auto;
+    
+  }
+
+  .bg{
+    background-image: url('./images/bg-desktop-dark.jpg');
+  }
 }

@@ -1,6 +1,6 @@
 const inputData = document.querySelector('.inputData');
 const btn = document.querySelector('.submit');
-// const done = document.querySelectorAll('.blank');
+
 
 inputData.addEventListener('keypress',(event)=>{
   
@@ -13,15 +13,23 @@ inputData.addEventListener('keypress',(event)=>{
   }
 })
 
-// done.forEach(element => {
-//   element.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     const checked = element.querySelector('img');
-//     const parent = element.parentNode;
-//     const text = parent.querySelector('.list_item');
-//     console.log(e.currentTarget);
-//     checked.classList.toggle('show');
-//     text.classList.toggle('stroke');
-//     // element.style.display = 'none';
-//   })
-// })
+
+
+// const actionbtn = document.querySelectorAll('.actionbtn');
+const actionbtn = document.getElementsByClassName('actionbtn');
+
+console.log(actionbtn);
+actionbtn.forEach(element => {
+  element.addEventListener('click',()=>{
+    console.log(element);
+    element.classList.toggle('filter');
+  })
+})
+
+const js = document.querySelector('js');
+
+js.innerHTML=actionbtn;
+
+const btnClick = (e) => {
+  e.target.classList.toggle('filter');
+}

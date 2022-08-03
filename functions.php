@@ -37,4 +37,24 @@
     return mysqli_affected_rows($conn);
   }
 
+
+  function status($status){
+    global $conn;
+    $result = mysqli_query($conn,"SELECT * FROM tbl_todo WHERE completed_status=$status");
+    
+    $tasks = [];
+    while($task = mysqli_fetch_assoc($result)){
+      $tasks[] = $task;
+    }
+
+    return $tasks;
+  }
+
+  function deleteComplete (){
+    global $conn;
+    $del = "DELETE FROM tbl_todo WHERE completed_status='1'" ;
+    mysqli_query($conn,$del);
+    // return mysqli_affected_rows($conn);
+  }
+
 ?>
